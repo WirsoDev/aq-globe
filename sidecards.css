@@ -1,0 +1,91 @@
+.places{
+    position: fixed;
+    left: 20px;
+    top: 20vh;
+    border: 3px solid rgb(36, 36, 36);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    min-height: 400px;
+    width: 250px;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 20px;
+    animation: intro 200ms ease-in-out reverse;
+}
+
+@keyframes intro {
+    to{
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+}
+
+.places h2{
+    font-family: 'gilroy-bold';
+    margin-bottom: 40px;
+}
+
+.places-list{
+    font-family: 'gilroy';
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.places-list p{
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+    padding: 7px;
+}
+
+.places-list p:hover{
+    border-bottom: 2px solid black;
+}
+
+.details{
+    position: fixed;
+    right: 20px;
+    top: 20vh;
+    border: 3px solid rgb(36, 36, 36);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    min-height: 400px;
+    width: 250px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 20px;
+    
+}
+
+@keyframes introReverse {
+    to{
+        transform: translateX(200px);
+        opacity: 0;
+    }
+}
+
+.detail-cont{
+    margin-bottom: 15px;
+    animation: introReverse 200ms ease-in-out reverse;
+    transition: 200ms;
+}
+
+
+.place-name h2{
+    font-family: 'gilroy-bold';
+    text-align: left;
+}
+
+.place-info{
+    font-family: 'gilroy';
+}
+
+.flags{
+    position: absolute;
+    width: 30px;
+    right: 30px;
+    top: 120px;
+}

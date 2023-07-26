@@ -1,0 +1,103 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  overflow: hidden;
+}
+
+.app{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(223, 225, 230);
+  width: 100vw;
+  height: 100vh;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Buttons */
+
+.buttons{
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 600px;
+}
+
+.btn{
+  background-color: rgb(36, 36, 36);
+  /*padding: 15px 25px;*/
+  color: rgb(223, 225, 230);
+  font-family: 'gilroy';
+  font-size: .9em;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.configs{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  font-family: 'gilroy';
+  top: 25px;
+  right: 25px;
+}
+
+.configs p{
+  color: transparent;
+}
+
+.changemap{
+  cursor: pointer;
+}
+
+.changemap img{
+  width: 30px;
+}
+
+.custmsg::before{
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 140px;
+  color: rgb(36, 36, 36);
+  text-align: center;
+  border-radius: 20px;
+  transition: opacity 1s ease-in-out;
+  padding: 20px 25px;
+  position: fixed;
+  z-index: 1;
+  right: 15px;
+  top: 60px;
+  text-align: center;
+  font-family: 'gilroy';
+}
+
+.custmsg:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.desableautorot {
+  cursor: pointer;
+}
+
+
+.desableautorot img{
+  width: 30px;
+}

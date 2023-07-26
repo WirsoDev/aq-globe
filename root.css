@@ -1,0 +1,22 @@
+@font-face{
+    font-family: 'gilroy';
+    src: url('/fonts/Gilroy-Light.otf'); /* IE9 Compat Modes */
+    src: url('/fonts/Gilroy-Light.otf') format('embedded-opentype'), /* IE6-IE8 */
+        url('/fonts/Gilroy-Light.otf') format('woff2'), /* Super Modern Browsers */
+        url('/fonts/Gilroy-Light.otf') format('woff'), /* Pretty Modern Browsers */
+        url('/fonts/Gilroy-Light.otf')  format('truetype'), /* Safari, Android, iOS */
+        url('/fonts/Gilroy-Light.otf') format('svg'); /* Legacy iOS */
+}
+
+
+@font-face{
+    font-family: 'gilroy-bold';
+    src: url('/fonts/Gilroy-ExtraBold.otf'); /* IE9 Compat Modes */
+    src: url('/fonts/Gilroy-ExtraBold.otf') format('embedded-opentype'), /* IE6-IE8 */
+        url('/fonts/Gilroy-ExtraBold.otf') format('woff2'), /* Super Modern Browsers */
+        url('/fonts/Gilroy-ExtraBold.otf') format('woff'), /* Pretty Modern Browsers */
+        url('/fonts/Gilroy-ExtraBold.otf')  format('truetype'), /* Safari, Android, iOS */
+        url('/fonts/Gilroy-ExtraBold.otf') format('svg'); /* Legacy iOS */
+}
+
+
