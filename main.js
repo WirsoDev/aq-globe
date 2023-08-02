@@ -4,84 +4,26 @@ import './sidecards.css'
 
 import * as THREE from 'three'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
-
 import {dataPlaces} from './data' 
+import { scene } from './3dassets/scene'
+
+import {cordToTriPoints} from './helpers/cordToTriPoints'
+import {GlobeMesh, pinTestMesh} from './3dassets/objects'
 
 
-//variables
+//add obj to scene //
+let globe = GlobeMesh()
+scene.add(globe)
 
-let radiusSphere = 3
-let radiusPins = .1
-
-//maps
-let map = new THREE.TextureLoader().load('textures/dots-02.jpg')
-
-
-//scene
-const scene = new THREE.Scene()
-scene.fog = new THREE.Fog(0x535ef3, 1500, 2000);
-
-//background colors
-const color1 = new THREE.Color("rgb(252, 252, 252)")
-scene.background = color1
-
-//create obj
-
-
-//Sphere
-const GemSphere = new THREE.SphereGeometry(radiusSphere, 64, 64)
-
-const materialSf = new THREE.MeshStandardMaterial({
-  map: map
-})
-
-materialSf.emissive = new THREE.Color("rgb(17, 22, 36)")
-materialSf.emissiveIntensity = 2
-
-const mesh = new THREE.Mesh(GemSphere, materialSf)
-scene.add(mesh)
-
-//teste obj - cords
-const testSphere = new THREE.SphereGeometry(radiusPins, 64, 64)
-
-const materialTest = new THREE.MeshStandardMaterial({
-  color: '#eb4034'
-})
-
-//convert deg to mesh x y z
-
-let cords = [38.736946, -9.142685] // lisboa
+//teste pin
 let cords2 = [35.6895000, 139.6917100] // toquio
 
+let points = cordToTriPoints(cords2)
 
+let pin = pinTestMesh()
+pin.position.set(points.x, points.y, points.z)
+scene.add(pin)
 
-const convertDeg = (cords) => {
-  // convert degs to tri point cords
-  //return array [x, y, z]
-
-  //obj dist
-  let j = radiusSphere + radiusPins
-
-  console.log(cords[0], cords[1])
-
-  let phi = (90-cords[0])*(Math.PI/180)
-  let theta = (cords[1]+180)*(Math.PI/180)
-  let x = -(Math.sin(phi))*Math.cos(theta) * j
-  let z = (Math.sin(phi))*Math.sin(theta) * j
-  let y = (Math.cos(phi)) * j
-
-  return{x, z, y}
-
-}
-
-
-let points = convertDeg(cords2)
-console.log(points)
-
-
-const mesh2 = new THREE.Mesh(testSphere, materialTest)
-mesh2.position.set(points.x, points.y, points.z)
-scene.add(mesh2)
 
 
 //Sizes
@@ -126,6 +68,7 @@ const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 controls. enablePan = false
 controls.enableZoom = false
+
 //controls.autoRotate = true
 
 
