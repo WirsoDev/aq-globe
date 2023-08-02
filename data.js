@@ -14,21 +14,21 @@ let dataPlaces = {
         cord:'teste',
         flag:'fr',
         factorys:{
-            sinde:'Cenas cenas 2'
+            Teste:'Teste1'
         }
     },
     'Spain':{
         cord:'teste',
         flag:'es',
         factorys:{
-            sinde:'Cenas cenas 3'
+            Teste:'Teste2'
         }
     },
     'Germany':{
         cord:'teste',
         flag:'de',
         factorys:{
-            sinde:'Cenas cenas 4'
+            Teste:'Teste3'
         }
     }
 }

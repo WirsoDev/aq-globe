@@ -18,7 +18,7 @@ const scene = new THREE.Scene()
 scene.fog = new THREE.Fog(0x535ef3, 1500, 2000);
 
 //background colors
-const color1 = new THREE.Color("rgb(223, 225, 230)")
+const color1 = new THREE.Color("rgb(252, 252, 252)")
 scene.background = color1
 
 //create obj
