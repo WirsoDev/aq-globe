@@ -9,6 +9,10 @@ import {dataPlaces} from './data'
 
 
 //variables
+
+let radiusSphere = 3
+let radiusPins = .1
+
 //maps
 let map = new THREE.TextureLoader().load('textures/dots-02.jpg')
 
@@ -23,8 +27,9 @@ scene.background = color1
 
 //create obj
 
+
 //Sphere
-const GemSphere = new THREE.SphereGeometry(3, 64, 64)
+const GemSphere = new THREE.SphereGeometry(radiusSphere, 64, 64)
 
 const materialSf = new THREE.MeshStandardMaterial({
   map: map
@@ -36,6 +41,47 @@ materialSf.emissiveIntensity = 2
 const mesh = new THREE.Mesh(GemSphere, materialSf)
 scene.add(mesh)
 
+//teste obj - cords
+const testSphere = new THREE.SphereGeometry(radiusPins, 64, 64)
+
+const materialTest = new THREE.MeshStandardMaterial({
+  color: '#eb4034'
+})
+
+//convert deg to mesh x y z
+
+let cords = [38.736946, -9.142685] // lisboa
+let cords2 = [35.6895000, 139.6917100] // toquio
+
+
+
+const convertDeg = (cords) => {
+  // convert degs to tri point cords
+  //return array [x, y, z]
+
+  //obj dist
+  let j = radiusSphere + radiusPins
+
+  console.log(cords[0], cords[1])
+
+  let phi = (90-cords[0])*(Math.PI/180)
+  let theta = (cords[1]+180)*(Math.PI/180)
+  let x = -(Math.sin(phi))*Math.cos(theta) * j
+  let z = (Math.sin(phi))*Math.sin(theta) * j
+  let y = (Math.cos(phi)) * j
+
+  return{x, z, y}
+
+}
+
+
+let points = convertDeg(cords2)
+console.log(points)
+
+
+const mesh2 = new THREE.Mesh(testSphere, materialTest)
+mesh2.position.set(points.x, points.y, points.z)
+scene.add(mesh2)
 
 
 //Sizes
@@ -43,6 +89,7 @@ const sizes = {
   width: window.innerWidth - 200,
   height: window.innerHeight - 200
 }
+
 
 //light
 const light = new THREE.PointLight(0xffffff, .35, 145) 
@@ -58,7 +105,7 @@ scene.add( lightAmb );
 
 //camera
 const camera = new THREE.PerspectiveCamera(45, sizes.width/sizes.height, 0.1, 100)
-camera.position.z = 10
+camera.position.z = 9
 scene.add(camera)
 
 //renderer and canvas
@@ -98,7 +145,9 @@ let defAngl = -0.0025
 
 const loop = () => {
   // rotate globe
-  GemSphere.rotateY((deg + defAngl))
+  //GemSphere.rotateY((deg + defAngl))
+  //rotate comp obj
+  //testSphere.rotateY((deg  + defAngl))
   controls.update()
   renderer.render(scene, camera)
   window.requestAnimationFrame(loop)
@@ -152,8 +201,8 @@ weAre.addEventListener('click', ()=>{
     sidecards.innerHTML = ''
     isWeareActive = false
   }
-
 })
+
 
 //pHandler
 const pHandler = (x) => {
