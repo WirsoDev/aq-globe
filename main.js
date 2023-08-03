@@ -6,7 +6,7 @@ import * as THREE from 'three'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import {dataPlaces} from './data' 
 import { scene } from './3dassets/scene'
-import * as IMPORTER from './3dassets/sceneImporter'
+import './3dassets/sceneImporter'
 
 
 //Sizes
@@ -25,7 +25,6 @@ scene.add(light)
 
 const lightAmb = new THREE.AmbientLight( 0xd4d4d4); // soft white light
 scene.add( lightAmb );
-
 
 
 //camera
