@@ -7,7 +7,7 @@ import {GlobeMesh, pinTestMesh} from './objects'
 let globe = GlobeMesh()
 scene.add(globe)
 
-//teste pin
+// teste pin //
 let cords2 = [35.6895000, 139.6917100] // toquio
 
 let points = cordToTriPoints(cords2)

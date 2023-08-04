@@ -7,6 +7,7 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import {dataPlaces} from './data' 
 import { scene } from './3dassets/scene'
 import './3dassets/sceneImporter'
+import './3dassets/lights'
 
 
 //Sizes
@@ -14,17 +15,6 @@ const sizes = {
   width: window.innerWidth - 200,
   height: window.innerHeight - 200
 }
-
-
-//light
-const light = new THREE.PointLight(0xffffff, .35, 145) 
-light.position.set(0, 10, 10)
-
-scene.add(light)
-
-
-const lightAmb = new THREE.AmbientLight( 0xd4d4d4); // soft white light
-scene.add( lightAmb );
 
 
 //camera
@@ -38,11 +28,9 @@ const canvas = document.querySelector('.webgl')
 const renderer = new THREE.WebGLRenderer({canvas, antialias:true})
 renderer.setPixelRatio(window.devicePixelRatio)
 
-
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(2)
 renderer.render(scene, camera)
-
 
 //controls
 
@@ -52,7 +40,6 @@ controls. enablePan = false
 controls.enableZoom = false
 
 //controls.autoRotate = true
-
 
 //rezise
 
@@ -78,7 +65,6 @@ const loop = () => {
   window.requestAnimationFrame(loop)
 }
 loop()
-
 
 
 //we are
@@ -175,6 +161,7 @@ const openDetails = (targetInfo, target) => {
     innerHtmlDetails = innerHtmlDetails + detailsCont
     console.log(innerHtmlDetails)
     index ++
+
   })
   const details = document.querySelector('.details')
   details.innerHTML = innerHtmlDetails
