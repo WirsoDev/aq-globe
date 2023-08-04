@@ -8,19 +8,9 @@ import {dataPlaces} from './data'
 import { scene } from './3dassets/scene'
 import './3dassets/sceneImporter'
 import './3dassets/lights'
+import { camera } from './3dassets/lights'
+import { sizes } from './helpers/globalVariables'
 
-
-//Sizes
-const sizes = {
-  width: window.innerWidth - 200,
-  height: window.innerHeight - 200
-}
-
-
-//camera
-const camera = new THREE.PerspectiveCamera(45, sizes.width/sizes.height, 0.1, 100)
-camera.position.z = 9
-scene.add(camera)
 
 //renderer and canvas
 
@@ -39,7 +29,6 @@ const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 controls. enablePan = false
 controls.enableZoom = false
-
 //controls.autoRotate = true
 
 //rezise
@@ -61,7 +50,7 @@ const loop = () => {
   //GemSphere.rotateY((deg + defAngl))
   //rotate comp obj
   //testSphere.rotateY((deg  + defAngl))
-  controls.update()
+  //controls.update()
   renderer.render(scene, camera)
   window.requestAnimationFrame(loop)
 }
@@ -91,7 +80,7 @@ weAre.addEventListener('click', ()=>{
     const sidecards = document.querySelector('.sidecards')
     sidecards.innerHTML = places
 
-    
+
     //add all p'ss
     const placesList = document.querySelector('.places-list')
     objKeys.map(x => {
@@ -176,7 +165,8 @@ const openDetails = (targetInfo, target) => {
 
 const weExport = document.querySelector('#weExport')
 weExport.addEventListener('click', ()=>{
-  alert('still under development. We are working on the data')
+  //alert('still under development. We are working on the data')
+  console.log(camera.position)
 })
 
 
@@ -220,11 +210,15 @@ desableAutoRot.addEventListener('click', () => {
   if(defAngl == 0){
     iconPath.src = 'public/static/rotate.svg'
     defAngl = -0.0025
+    controls.autoRotate = true
   }else{
     defAngl = 0
     iconPath.src = 'public/static/norotate.svg'
+    controls.autoRotate = false
   }
 })
 
 
+//test focus camera
+var pin = scene.getObjectByName('India')
 
