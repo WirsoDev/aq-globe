@@ -3,4 +3,9 @@ const globalVariables = {
     radiusPins : .1
 }
 
-export{globalVariables}
+const sizes = {
+    width: window.innerWidth - 200,
+    height: window.innerHeight - 200
+  }
+
+export{globalVariables, sizes}

@@ -1,6 +1,9 @@
 import * as THREE from 'three'
 import {scene} from './scene'
+import {sizes} from '../helpers/globalVariables'
 
+
+//Lights
 const light = new THREE.PointLight(0xffffff, .35, 145) 
 light.position.set(0, 10, 10)
 

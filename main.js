@@ -34,6 +34,7 @@ renderer.render(scene, camera)
 
 //controls
 
+
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 controls. enablePan = false
@@ -85,9 +86,12 @@ weAre.addEventListener('click', ()=>{
             </div>
           </div>
     `
+
+
     const sidecards = document.querySelector('.sidecards')
     sidecards.innerHTML = places
 
+    
     //add all p'ss
     const placesList = document.querySelector('.places-list')
     objKeys.map(x => {

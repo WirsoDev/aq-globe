@@ -34,6 +34,17 @@ function pinTestMesh(){
 
 }
 
-export{GlobeMesh, pinTestMesh}
+
+function createFabs(){
+    const fabsPrime = new THREE.SphereGeometry(radiusPins, 64, 64)
+    const fabsMat = new THREE.MeshStandardMaterial({
+        color: '#eb4034'
+    })
+
+    let newMesh = new THREE.Mesh(fabsPrime, fabsMat)
+    return newMesh
+}
+
+export{GlobeMesh, pinTestMesh, createFabs}
 
 
