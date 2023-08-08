@@ -16,6 +16,7 @@ import dotstexreal from './textures/real.jpg'
 
 import rotate from './public/static/rotate.svg'
 import noRotate from './public/static/norotate.svg'
+import {resolvFlag} from './helpers/loadFlags'
 
 
 //renderer and canvas
@@ -132,7 +133,8 @@ const openDetails = (targetInfo, target) => {
   const flagsDiv = document.querySelector('.flags')
   flagsDiv.innerHTML = ''
   const imgFlag = document.createElement('img')
-  imgFlag.setAttribute('src', `public/static/flags/${targetInfo.flag}.svg`)
+  let targetFlag = resolvFlag(targetInfo.flag)
+  imgFlag.setAttribute('src', targetFlag)
   flagsDiv.appendChild(imgFlag)
 
   const targetFactorys = targetInfo.factorys
