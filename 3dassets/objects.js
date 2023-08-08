@@ -1,12 +1,13 @@
 import * as THREE from 'three'
 import {globalVariables} from '../helpers/globalVariables'
+import dotstex from '../textures/dots-02.jpg'
 
 //variables
 let radiusSphere = globalVariables.radiusSphere
 let radiusPins = globalVariables.radiusPins
 
 //maps
-let map = new THREE.TextureLoader().load('textures/dots-02.jpg')
+let map = new THREE.TextureLoader().load(dotstex)
 
 // create Globe
 const GemSphere = new THREE.SphereGeometry(radiusSphere, 64, 64)

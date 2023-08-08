@@ -11,6 +11,12 @@ import './3dassets/lights'
 import { camera } from './3dassets/lights'
 import { sizes } from './helpers/globalVariables'
 
+import dotstex from './textures/dots-02.jpg'
+import dotstexreal from './textures/real.jpg'
+
+import rotate from './public/static/rotate.svg'
+import noRotate from './public/static/norotate.svg'
+
 
 //renderer and canvas
 
@@ -184,10 +190,10 @@ mapsHandler.addEventListener('click', ()=>{
 
   if(mapPath == 'dots-02.jpg'){
       mapIcon.src = 'public/static/globe_real.svg'
-      map = new THREE.TextureLoader().load('textures/real.jpg')
+      map = new THREE.TextureLoader().load(dotstexreal)
   }else{
     mapIcon.src = '/static/globe_dot.svg'
-    map = new THREE.TextureLoader().load('textures/dots-02.jpg')
+    map = new THREE.TextureLoader().load(dotstex)
   }
 
   const materialSf = new THREE.MeshStandardMaterial({
@@ -205,12 +211,12 @@ const desableAutoRot = document.querySelector('.desableautorot')
 const iconPath = document.querySelector('#iconPath')
 desableAutoRot.addEventListener('click', () => {
   if(defAngl == 0){
-    iconPath.src = 'public/static/rotate.svg'
+    iconPath.src = rotate
     defAngl = -0.0025
     controls.autoRotate = true
   }else{
     defAngl = 0
-    iconPath.src = 'public/static/norotate.svg'
+    iconPath.src = noRotate
     controls.autoRotate = false
   }
 })
