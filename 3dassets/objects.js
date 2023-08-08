@@ -8,11 +8,10 @@ let radiusPins = globalVariables.radiusPins
 //maps
 let map = new THREE.TextureLoader().load('textures/dots-02.jpg')
 
-
+// create Globe
+const GemSphere = new THREE.SphereGeometry(radiusSphere, 64, 64)
 
 function GlobeMesh(){
-    // create Globe
-    const GemSphere = new THREE.SphereGeometry(radiusSphere, 64, 64)
     const materialSf = new THREE.MeshStandardMaterial({
     map: map
     })
@@ -38,13 +37,13 @@ function pinTestMesh(){
 function createFabs(){
     const fabsPrime = new THREE.SphereGeometry(radiusPins, 64, 64)
     const fabsMat = new THREE.MeshStandardMaterial({
-        color: '#eb4034'
+        color: '#ba2335'
     })
 
     let newMesh = new THREE.Mesh(fabsPrime, fabsMat)
     return newMesh
 }
 
-export{GlobeMesh, pinTestMesh, createFabs}
+export{GlobeMesh, pinTestMesh, createFabs, GemSphere}
 
 

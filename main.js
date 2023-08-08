@@ -29,7 +29,7 @@ const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 controls. enablePan = false
 controls.enableZoom = false
-//controls.autoRotate = true
+controls.autoRotate = true
 
 //rezise
 
@@ -46,11 +46,8 @@ let deg = 0
 let defAngl = -0.0025
 
 const loop = () => {
-  // rotate globe
-  //GemSphere.rotateY((deg + defAngl))
-  //rotate comp obj
-  //testSphere.rotateY((deg  + defAngl))
-  //controls.update()
+
+  controls.update()
   renderer.render(scene, camera)
   window.requestAnimationFrame(loop)
 }
@@ -165,7 +162,7 @@ const openDetails = (targetInfo, target) => {
 
 const weExport = document.querySelector('#weExport')
 weExport.addEventListener('click', ()=>{
-  //alert('still under development. We are working on the data')
+  alert('still under development. We are working on the data')
   console.log(camera.position)
 })
 
@@ -221,4 +218,3 @@ desableAutoRot.addEventListener('click', () => {
 
 //test focus camera
 var pin = scene.getObjectByName('India')
-

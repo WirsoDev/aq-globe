@@ -48,10 +48,10 @@ let dataPlaces = {
         flag: 'cn',
         factorys: {
             SofaBuilders: 'Sofas',
-            MattressFactoryChina: 'Mattress',
+            MattressFactory: 'Mattress',
             FoamProducers: 'Foam',
-            FiberSpringsIndustries: 'Fiber/Springs',
-            TimberProcessingChina: 'Wood'
+            FiberSprings: 'Fiber/Springs',
+            TimberProcessing: 'Wood'
         }
     },
     'India': {
@@ -59,21 +59,10 @@ let dataPlaces = {
         flag: 'in',
         factorys: {
             SofaCrafters: 'Sofas',
-            MattressMakersIndia: 'Mattress',
-            FoamIndustriesIndia: 'Foam',
-            FiberSpringsIndia: 'Fiber/Springs',
+            MattressMakers: 'Mattress',
+            FoamIndustries: 'Foam',
+            FiberSprings: 'Fiber/Springs',
             WoodworksIndia: 'Wood'
-        }
-    },
-    'Russia': {
-        cord: [61.52401, 105.318756],
-        flag: 'ru',
-        factorys: {
-            SofaMastersRussia: 'Sofas',
-            MattressCoRussia: 'Mattress',
-            FoamTechRussia: 'Foam',
-            FiberSpringsRussia: 'Fiber/Springs',
-            WoodworkRussia: 'Wood'
         }
     },
     'Australia': {
@@ -96,17 +85,6 @@ let dataPlaces = {
             FoamTechJapan: 'Foam',
             FiberSpringsJapan: 'Fiber/Springs',
             WoodMastersJapan: 'Wood'
-        }
-    },
-    'South Africa': {
-        cord: [-30.559482, 22.937506],
-        flag: 'za',
-        factorys: {
-            SofaCraftersSA: 'Sofas',
-            MattressMakersSA: 'Mattress',
-            FoamProducersSA: 'Foam',
-            FiberSpringsSA: 'Fiber/Springs',
-            TimberSA: 'Wood'
         }
     }
 };
