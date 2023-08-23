@@ -1,6 +1,7 @@
 const globalVariables = {
     radiusSphere : 3,
-    radiusPins : .05
+    radiusPins : .05,
+    radiusExtraPins : .085
 }
 
 const sizes = {

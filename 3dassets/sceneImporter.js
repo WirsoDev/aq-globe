@@ -1,11 +1,12 @@
 import {scene} from './scene'
 import {cordToTriPoints} from '../helpers/cordToTriPoints'
-import {GlobeMesh, pinTestMesh, createFabs} from './objects'
+import {GlobeMesh, pinTestMesh, createFabs, createFabOnClick} from './objects'
 import {dataPlaces} from '../data'
 
 
 //add obj to scene //
 let globe = GlobeMesh()
+globe.name = 'globe'
 scene.add(globe)
 
 
@@ -25,6 +26,20 @@ objKeys.map((x)=>{
     scene.add(newPin)
 
 })
+
+function addObjOnClick(id){
+
+    let obj = dataPlaces[id].cord
+    let TriP = cordToTriPoints(obj)
+    let newFab = createFabOnClick()
+
+    newFab.position.set(TriP.x, TriP.y, TriP.z)
+    newFab.name = 'CurrentSelection'
+    console.log('Add new OBJ' + id)
+    scene.add(newFab)
+}
+
+export {addObjOnClick}
 
 //get obj by name
 //var obj = scene.getObjectByName('India')

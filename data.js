@@ -10,83 +10,102 @@ let dataPlaces = {
             Eurotabua: 'Wood'
         }
     },
-    'United States': {
-        cord: [37.09024, -95.712891],
-        flag: 'us',
+    'France': {
+        cord: [46.71109, 1.7191036],
+        flag: 'fr',
         factorys: {
-            Sofamakers: 'Sofas',
-            MattressCo: 'Mattress',
-            FoamTech: 'Foam',
-            FiberSpringsInc: 'Fiber/Springs',
-            TimberWoodworks: 'Wood'
+            Name1: 'type',
+            Name2: 'type',
+            Name3: 'type',
+            Name4: 'type',
+            Name5: 'type',
         }
     },
-    'Brazil': {
-        cord: [-14.235004, -51.92528],
-        flag: 'br',
+    'Poland': {
+        cord: [51.9189046, 19.1343786],
+        flag: 'pl',
         factorys: {
-            EstofadosBR: 'Sofas',
-            ColchoesBR: 'Mattress',
-            EspumasBR: 'Foam',
-            FibraMolasBR: 'Fiber/Springs',
-            MadeiraBR: 'Wood'
+            Name1: 'type',
+            Name2: 'type',
+            Name3: 'type',
+            Name4: 'type',
+            Name5: 'type',
         }
     },
     'Germany': {
         cord: [51.165691, 10.451526],
         flag: 'de',
         factorys: {
-            SofaManufaktur: 'Sofas',
-            MatratzenFabrik: 'Mattress',
-            SchaumstoffTechnik: 'Foam',
-            FaserFederGmbH: 'Fiber/Springs',
-            HolzVerarbeitung: 'Wood'
+            Name1: 'type',
+            Name2: 'type',
+            Name3: 'type',
+            Name4: 'type',
+            Name5: 'type',
+        }
+    },
+    'Switzerland': {
+        cord: [46.8131873, 8.22421], 
+        flag: 'ch',
+        factorys: {
+            Name1: 'type',
+            Name2: 'type',
+            Name3: 'type',
+            Name4: 'type',
+            Name5: 'type',
+        }
+    },
+    'Austria': {
+        cord: [47.6964719, 13.3457347], 
+        flag: 'at',
+        factorys: {
+            Name1: 'type',
+            Name2: 'type',
+            Name3: 'type',
+            Name4: 'type',
+            Name5: 'type',
+        }
+    },
+    'Belgium': {
+        cord: [50.5010789, 4.4764595],
+        flag: 'be',
+        factorys: {
+            Name1: 'type',
+            Name2: 'type',
+            Name3: 'type',
+            Name4: 'type',
+            Name5: 'type',
+        }
+    },
+    'Netherlands': {
+        cord: [52.2129919, 5.2793703],
+        flag: 'nl',
+        factorys: {
+            Name1: 'type',
+            Name2: 'type',
+            Name3: 'type',
+            Name4: 'type',
+            Name5: 'type',
+        }
+    },
+    'Romania': {
+        cord: [45.9442858, 25.0094303],
+        flag: 'ro',
+        factorys: {
+            Name1: 'type',
+            Name2: 'type',
+            Name3: 'type',
+            Name4: 'type',
+            Name5: 'type',
         }
     },
     'China': {
-        cord: [35.86166, 104.195397],
+        cord: [35.8592948, 104.1361118],
         flag: 'cn',
         factorys: {
-            SofaBuilders: 'Sofas',
-            MattressFactory: 'Mattress',
-            FoamProducers: 'Foam',
-            FiberSprings: 'Fiber/Springs',
-            TimberProcessing: 'Wood'
+            HongKong: 'Office',
+            Shenzhen : 'Office',
         }
     },
-    'India': {
-        cord: [20.593684, 78.96288],
-        flag: 'in',
-        factorys: {
-            SofaCrafters: 'Sofas',
-            MattressMakers: 'Mattress',
-            FoamIndustries: 'Foam',
-            FiberSprings: 'Fiber/Springs',
-            WoodworksIndia: 'Wood'
-        }
-    },
-    'Australia': {
-        cord: [-25.274398, 133.775136],
-        flag: 'au',
-        factorys: {
-            AussieSofas: 'Sofas',
-            AussieMattresses: 'Mattress',
-            FoamDownUnder: 'Foam',
-            AussieFiberSprings: 'Fiber/Springs',
-            TimberLandAU: 'Wood'
-        }
-    },
-    'Japan': {
-        cord: [36.204824, 138.252924],
-        flag: 'jp',
-        factorys: {
-            SofaArtisansJapan: 'Sofas',
-            MattressJapan: 'Mattress',
-            FoamTechJapan: 'Foam',
-            FiberSpringsJapan: 'Fiber/Springs',
-            WoodMastersJapan: 'Wood'
-        }
-    }
 };
 
 

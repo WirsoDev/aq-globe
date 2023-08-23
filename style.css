@@ -30,19 +30,26 @@ html {
 }
 
 .btn{
-  background-color: rgb(36, 36, 36);
-  /* padding: 15px 25px */
-  color: rgb(223, 225, 230);
-  font-family: 'gilroy';
+  background-color: white;
+  border: 0px solid rgb(36, 36, 36);
+  color: rgb(36, 36, 36);
+  font-family: 'gilroy-bold';
   font-size: 1em;
   border-radius: 50px;
   cursor: pointer;
   width: 250px;
-  height: 60px;
+  height: 70px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  letter-spacing: 3px;
+  transition: 200ms;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+
+.btn:hover{
+  transform: scale(1.05);
 }
 
 .configs{
@@ -64,6 +71,7 @@ html {
 
 .changemap{
   cursor: pointer;
+  display: none;
 }
 
 .changemap img{

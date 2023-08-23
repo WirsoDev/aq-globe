@@ -17,6 +17,8 @@ import dotstexreal from './textures/real.jpg'
 import rotate from './public/static/rotate.svg'
 import noRotate from './public/static/norotate.svg'
 import {resolvFlag} from './helpers/loadFlags'
+import {addObjOnClick} from './3dassets/sceneImporter'
+import {fitCameraToObject} from './helpers/fitCameraToObject'
 
 
 //renderer and canvas
@@ -98,10 +100,10 @@ weAre.addEventListener('click', ()=>{
 
     //eventlistner p´sss
     const listP = document.querySelectorAll('.currentPlaces')
-    console.log(listP)
     listP.forEach(x => {
       x.addEventListener('click', pHandler)
     })
+
 
 
   }else{
@@ -115,14 +117,31 @@ weAre.addEventListener('click', ()=>{
 //pHandler
 const pHandler = (x) => {
   //get target id
+
   const target = x.target.id
   const targetInfo = dataPlaces[target]
-  
+
+  //remove any extra pin selected
+  var pin = scene.getObjectByName('CurrentSelection')
+  if(pin !== undefined){
+    scene.remove(pin)
+  }
+
+  //add new OBJ
+  addObjOnClick(target)
+
   //open detais card func
   openDetails(targetInfo, target)
 }
 
 const openDetails = (targetInfo, target) => {
+
+  //reset detais
+  const details_toreset = document.querySelector('.details')
+  if(details_toreset !== null){
+    details_toreset.remove()
+  }
+
   //create target card
   const sidecards = document.querySelector('.sidecards')
   const detailsDiv = document.createElement('div')
@@ -157,7 +176,6 @@ const openDetails = (targetInfo, target) => {
 
     //add to innerHtmlDetails
     innerHtmlDetails = innerHtmlDetails + detailsCont
-    console.log(innerHtmlDetails)
     index ++
 
   })
@@ -170,8 +188,13 @@ const openDetails = (targetInfo, target) => {
 
 const weExport = document.querySelector('#weExport')
 weExport.addEventListener('click', ()=>{
-  alert('still under development. We are working on the data')
+  //alert('still under development. We are working on the data')
   console.log(camera.position)
+
+  const obj2 = scene.getObjectByName('Portugal')
+  const globe2 = scene.getObjectByName('globe')
+
+  fitCameraToObject(camera, controls, obj2, globe2)
 })
 
 
@@ -224,5 +247,3 @@ desableAutoRot.addEventListener('click', () => {
 })
 
 
-//test focus camera
-var pin = scene.getObjectByName('India')

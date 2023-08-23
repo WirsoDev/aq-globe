@@ -1,5 +1,11 @@
-- Color obj on select (we are / we sell)
-- adj ui (cards)
-- create file to control 3d obj
-- try to group obj ( all pins follow globe ) fixed??
-- focus cam on object
+
+ -- SOFAS!
+
+- Corrigir left card ( duplicação de componentes ) ##DONE##
+- Localização real das fabricas / escritorios ##DONE##
+- Modelos 3d (fabricas / escritorios)
+- Alterar a cor e dimensão dos modelos quando carregamos num pais 
+- Criar ModelConstructor para alterar os objectos no mapa
+- Retirar opção de alterar mapa ##DONE##
+- tentar dar um aspeto melhor aos botoes ( sem preenchimento? ) ## DONE ##
+- Flags ##DONE##

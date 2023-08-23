@@ -5,6 +5,7 @@ import dotstex from '../textures/dots-02.jpg'
 //variables
 let radiusSphere = globalVariables.radiusSphere
 let radiusPins = globalVariables.radiusPins
+let radiusExtraPins = globalVariables.radiusExtraPins
 
 //maps
 let map = new THREE.TextureLoader().load(dotstex)
@@ -36,15 +37,32 @@ function pinTestMesh(){
 
 
 function createFabs(){
+
+    const colors = {
+        red:'#ba2335',
+        grey:'#a8a7a7'
+    }
+
     const fabsPrime = new THREE.SphereGeometry(radiusPins, 64, 64)
     const fabsMat = new THREE.MeshStandardMaterial({
-        color: '#ba2335'
+        color: colors.grey
     })
 
     let newMesh = new THREE.Mesh(fabsPrime, fabsMat)
     return newMesh
 }
 
-export{GlobeMesh, pinTestMesh, createFabs, GemSphere}
+function createFabOnClick(){
+    const fabClick = new THREE.SphereGeometry(radiusExtraPins, 64, 64)
+    const fabMat = new THREE.MeshStandardMaterial({
+        color: "#ba2335"
+    })
+
+    let fabMesh = new THREE.Mesh(fabClick, fabMat)
+    console.log('Create new OBJ')
+    return fabMesh
+}
+
+export{GlobeMesh, pinTestMesh, createFabs, GemSphere, createFabOnClick}
 
 
