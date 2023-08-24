@@ -188,13 +188,13 @@ const openDetails = (targetInfo, target) => {
 
 const weExport = document.querySelector('#weExport')
 weExport.addEventListener('click', ()=>{
-  //alert('still under development. We are working on the data')
-  console.log(camera.position)
+  alert('still under development. We are working on the data')
+  //console.log(camera.position)
 
-  const obj2 = scene.getObjectByName('Portugal')
-  const globe2 = scene.getObjectByName('globe')
+  //const obj2 = scene.getObjectByName('Portugal')
+  //const globe2 = scene.getObjectByName('globe')
 
-  fitCameraToObject(camera, controls, obj2, globe2)
+  //fitCameraToObject(camera, controls, obj2, globe2)
 })
 
 
