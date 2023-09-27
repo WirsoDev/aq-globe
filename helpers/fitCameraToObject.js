@@ -27,10 +27,10 @@ function fitCameraToObject(camera, controls, object, objToCenter ,fitOffset = 50
     
     camera.near = distance / 100;
     camera.far = distance * 100;
-    //camera.updateProjectionMatrix();
+    camera.updateProjectionMatrix();
 
     camera.position.copy( controls.target ).sub(direction);
-    //console.log(controls.target)
+    console.log(controls.target)
     
     controls.update();
 

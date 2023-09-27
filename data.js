@@ -25,77 +25,51 @@ let dataPlaces = {
         cord: [51.9189046, 19.1343786],
         flag: 'pl',
         factorys: {
-            Name1: 'type',
-            Name2: 'type',
-            Name3: 'type',
-            Name4: 'type',
-            Name5: 'type',
+            Lodz: 'Aquinos Bedding Poland',
         }
     },
     'Germany': {
         cord: [51.165691, 10.451526],
         flag: 'de',
         factorys: {
-            Name1: 'type',
-            Name2: 'type',
-            Name3: 'type',
-            Name4: 'type',
-            Name5: 'type',
+            Bochum: 'Aquinos Bedding Germany',
+            Joestadt: 'Aquinos Bedding Germany',
         }
     },
     'Switzerland': {
         cord: [46.8131873, 8.22421], 
         flag: 'ch',
         factorys: {
-            Name1: 'type',
-            Name2: 'type',
-            Name3: 'type',
-            Name4: 'type',
-            Name5: 'type',
+            Flüe: 'Aquinos Bedding Switzerland',
         }
     },
     'Austria': {
         cord: [47.6964719, 13.3457347], 
         flag: 'at',
         factorys: {
-            Name1: 'type',
-            Name2: 'type',
-            Name3: 'type',
-            Name4: 'type',
-            Name5: 'type',
+            Timelkan: 'Aquinos Bedding Austria',
         }
     },
     'Belgium': {
         cord: [50.5010789, 4.4764595],
         flag: 'be',
         factorys: {
-            Name1: 'type',
-            Name2: 'type',
-            Name3: 'type',
-            Name4: 'type',
-            Name5: 'type',
+            GERAARDSBERGEN: 'Aquinos Bedding Belgium',
+            HULSHOUT: 'Aquinos Bedding Belgium',
         }
     },
     'Netherlands': {
         cord: [52.2129919, 5.2793703],
         flag: 'nl',
         factorys: {
-            Name1: 'type',
-            Name2: 'type',
-            Name3: 'type',
-            Name4: 'type',
-            Name5: 'type',
+            Kesteren: 'Aquinos Bedding Netherlands',
         }
     },
     'Romania': {
         cord: [45.9442858, 25.0094303],
         flag: 'ro',
         factorys: {
-            Name1: 'type',
-            Name2: 'type',
-            Name3: 'type',
-            Name4: 'type',
-            Name5: 'type',
+            Miercurea: 'Aquinos Bedding Romania',
         }
     },
     'China': {

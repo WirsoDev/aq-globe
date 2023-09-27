@@ -2,7 +2,7 @@
     position: fixed;
     left: 20px;
     top: 20vh;
-    
+    background-color: white;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -59,6 +59,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     border-radius: 20px;
+    background-color: white;
     box-shadow: rgba(17, 12, 46, 0.103) 0px 48px 100px 0px;
     
 }

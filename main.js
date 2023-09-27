@@ -188,13 +188,23 @@ const openDetails = (targetInfo, target) => {
 
 const weExport = document.querySelector('#weExport')
 weExport.addEventListener('click', ()=>{
-  alert('still under development. We are working on the data')
+  //alert('still under development. We are working on the data')
   //console.log(camera.position)
 
-  //const obj2 = scene.getObjectByName('Portugal')
-  //const globe2 = scene.getObjectByName('globe')
+  const obj2 = scene.getObjectByName('Portugal')
+  const globe2 = scene.getObjectByName('globe')
+  console.log(obj2.position)
 
-  //fitCameraToObject(camera, controls, obj2, globe2)
+  defAngl = 0
+  iconPath.src = noRotate
+  controls.autoRotate = false
+
+  let new_vector = new THREE.Vector3(7.310058275234356, 5.152087561606086, 1.00947598793676)
+  camera.position.addVectors(new_vector, new_vector)
+
+  console.log(camera.position)
+
+    //console.log(camera.position)
 })
 
 
