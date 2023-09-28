@@ -83,4 +83,62 @@ let dataPlaces = {
 };
 
 
-export{dataPlaces}
+let dataSell = {
+    'Bedding': {
+        'BELGIUM': {
+            cord: [50.5010789, 4.4764595]
+        },
+        'NETHERLANDS': {
+            cord: [52.132633, 5.291266]
+        },
+        'FRANCE': {
+            cord: [46.603354, 1.888334]
+        },
+        'GERMANY': {
+            cord: [51.165691, 10.451526]
+        },
+        'POLAND': {
+            cord: [51.919437, 19.145136]
+        },
+        'TSJECHIA': {
+            cord: [49.817492, 15.472962]
+        },
+        'SLOVAKIA': {
+            cord: [48.669026, 19.699024]
+        },
+        'HUNGARY': {
+            cord: [47.162494, 19.503304]
+        },
+        'SPAIN': {
+            cord: [40.463667, -3.74922]
+        },
+        'SWITZERLAND': {
+            cord: [46.818188, 8.227512]
+        },
+        'AUSTRIA': {
+            cord: [47.516231, 14.550072]
+        },
+        'SWEDEN': {
+            cord: [60.128161, 18.643501]
+        },
+        'DENMARK': {
+            cord: [56.26392, 9.501785]
+        },
+        'NORWAY': {
+            cord: [60.472024, 8.468946]
+        },
+        'FINLAND': {
+            cord: [61.92411, 25.748151]
+        },
+        'JAPAN': {
+            cord: [36.204824, 138.252924]
+        },
+        'CHINA': {
+            cord: [35.86166, 104.195397]
+        }
+    }
+};
+
+
+
+export{dataPlaces, dataSell}

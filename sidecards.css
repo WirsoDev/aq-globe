@@ -97,3 +97,10 @@
 .flags img{
     border: 1px solid black;
 }
+
+.wesellplaces{
+    font-family: 'gilroy';
+    font-size: 1em;
+    text-transform: capitalize;
+    line-height: 12px;
+}

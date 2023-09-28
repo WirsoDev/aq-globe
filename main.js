@@ -4,7 +4,7 @@ import './sidecards.css'
 
 import * as THREE from 'three'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
-import {dataPlaces} from './data' 
+import {dataPlaces, dataSell} from './data' 
 import { scene } from './3dassets/scene'
 import './3dassets/sceneImporter'
 import './3dassets/lights'
@@ -17,7 +17,7 @@ import dotstexreal from './textures/real.jpg'
 import rotate from './public/static/rotate.svg'
 import noRotate from './public/static/norotate.svg'
 import {resolvFlag} from './helpers/loadFlags'
-import {addObjOnClick} from './3dassets/sceneImporter'
+import {addObjOnClick, addObjOnClickSell} from './3dassets/sceneImporter'
 import {fitCameraToObject} from './helpers/fitCameraToObject'
 
 
@@ -33,12 +33,12 @@ renderer.render(scene, camera)
 
 //controls
 
-
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 controls. enablePan = false
 controls.enableZoom = false
 controls.autoRotate = true
+controls.autoRotateSpeed = -1
 
 //rezise
 
@@ -59,6 +59,7 @@ const loop = () => {
   controls.update()
   renderer.render(scene, camera)
   window.requestAnimationFrame(loop)
+
 }
 loop()
 
@@ -67,11 +68,35 @@ loop()
 const weAre = document.querySelector('#weAre')
 var isWeareActive = false
 weAre.addEventListener('click', ()=>{
+
+    const whereAre = document.getElementById('whereAre')
+    const wheresell = document.getElementById('weSell')
+ 
+    whereAre.innerHTML = 'Where we are'
+    wheresell.innerHTML = 'Where we sell'
+    
+
+
+    defAngl = 0
+    iconPath.src = rotate
+    controls.autoRotate = true
+
+    clearSellObjects()
+
+    // dell all active objs
+    clearSelectionObjects()
+
+
   const flagsDiv = document.querySelector('.flags')
   flagsDiv.innerHTML = ''
   if(isWeareActive == false){
         //get all keys from obj
     isWeareActive = true
+    const whereAre = document.getElementById('whereAre')
+    const weSell = document.getElementById('weSell')
+    whereAre.innerHTML = 'Close | Reset'
+    weSell.innerHTML = 'Close | Reset'
+    
     let objKeys = Object.keys(dataPlaces)
 
     let places = `
@@ -130,6 +155,20 @@ const pHandler = (x) => {
   //add new OBJ
   addObjOnClick(target)
 
+  //zoom in to obj
+  const obj2 = scene.getObjectByName(target)
+
+  defAngl = 0
+  iconPath.src = noRotate
+  controls.autoRotate = false
+  
+  let scaller = 1.45
+
+  let new_vector_3 = new THREE.Vector3(obj2.position.x * scaller, obj2.position.y * scaller, obj2.position.z * scaller)
+  
+  camera.position.addVectors(new_vector_3, new_vector_3)
+
+
   //open detais card func
   openDetails(targetInfo, target)
 }
@@ -184,28 +223,172 @@ const openDetails = (targetInfo, target) => {
 }
 
 
+
+
+
+
+
+
+
 //we export
+function clearSellObjects(){
+  let breakit = true
+    while(breakit){
+      const toDelObj = scene.getObjectByName('sellObj')
+      if(toDelObj == undefined){
+        breakit = false
+      }else{
+        scene.remove(toDelObj)
+      }
+    }
+}
+
+function clearSelectionObjects(){
+    var pin = scene.getObjectByName('CurrentSelection')
+    if(pin !== undefined){
+      scene.remove(pin)
+  }
+}
+
 
 const weExport = document.querySelector('#weExport')
 weExport.addEventListener('click', ()=>{
-  //alert('still under development. We are working on the data')
-  //console.log(camera.position)
 
-  const obj2 = scene.getObjectByName('Portugal')
-  const globe2 = scene.getObjectByName('globe')
-  console.log(obj2.position)
+    
+  
+    const whereSell = document.getElementById('weSell')
+    const weExport2 = document.getElementById('whereAre')
 
-  defAngl = 0
-  iconPath.src = noRotate
-  controls.autoRotate = false
+    whereSell.innerHTML = 'Where we sell'
+    weExport2.innerHTML = 'Where we are'
 
-  let new_vector = new THREE.Vector3(7.310058275234356, 5.152087561606086, 1.00947598793676)
-  camera.position.addVectors(new_vector, new_vector)
 
-  console.log(camera.position)
+    defAngl = 0
+    iconPath.src = rotate
+    controls.autoRotate = true
 
-    //console.log(camera.position)
+
+    // dell all active objs
+    clearSellObjects()
+    clearSelectionObjects()
+  
+  
+  const flagsDiv = document.querySelector('.flags')
+  flagsDiv.innerHTML = ''
+  if(isWeareActive == false){
+        //get all keys from obj
+    isWeareActive = true
+    const whereSell = document.getElementById('weSell')
+    const whereAre = document.getElementById('whereAre')
+
+    whereSell.innerHTML = 'Close | Reset'
+    whereAre.innerHTML = 'Close | Reset'
+  
+    
+    let objKeys = Object.keys(dataSell)
+
+    let places = `
+    <div class="places">
+            <h2>Where we are</h2>
+            <div class="places-list">
+            </div>
+          </div>
+    `
+
+
+    const sidecards = document.querySelector('.sidecards')
+    sidecards.innerHTML = places
+
+
+    //add all p'ss
+    const placesList = document.querySelector('.places-list')
+    objKeys.map(x => {
+      const node = document.createElement('p')
+      node.setAttribute('id', x)
+      node.setAttribute('class', 'currentPlaces')
+      const textNode = document.createTextNode(x);
+      node.appendChild(textNode)
+      placesList.appendChild(node)
+    })
+
+    //eventlistner p´sss
+    const listP = document.querySelectorAll('.currentPlaces')
+    listP.forEach(x => {
+      x.addEventListener('click', pHandler2)
+    })
+
+  }else{
+    const sidecards = document.querySelector('.sidecards')
+    sidecards.innerHTML = ''
+    isWeareActive = false
+  }
+
+
 })
+
+
+const pHandler2 = (x) => {
+  //get target id
+  const target = x.target.id
+  const targetInfo = dataSell[target]
+  console.log(targetInfo)
+
+  //add objs to globe
+  addObjOnClickSell(target)
+
+  //open detais card func
+  openDetails2(targetInfo)
+}
+
+
+const openDetails2 = (targetInfo, target) => {
+
+  //reset detais
+  const details_toreset = document.querySelector('.details')
+  if(details_toreset !== null){
+    details_toreset.remove()
+  }
+
+  //create target card
+  const sidecards = document.querySelector('.sidecards')
+  const detailsDiv = document.createElement('div')
+  detailsDiv.setAttribute('class', 'details')
+  sidecards.appendChild(detailsDiv)
+
+
+  const targetFactorys = targetInfo.factorys
+  const factorysObj = Object.keys(targetInfo)
+
+  let index = 0
+  let innerHtmlDetails = ''
+  factorysObj.map(x => {
+
+    let detailsCont = `
+    <div class="detail-cont">
+            <div class="place-name">
+              <p class="wesellplaces">${factorysObj[index].toLowerCase()}</p>
+            </div>
+          </div>
+    `
+
+    //add to innerHtmlDetails
+    innerHtmlDetails = innerHtmlDetails + detailsCont
+    index ++
+
+  })
+  const details = document.querySelector('.details')
+  details.innerHTML = innerHtmlDetails
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

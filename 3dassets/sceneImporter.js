@@ -1,7 +1,7 @@
 import {scene} from './scene'
 import {cordToTriPoints} from '../helpers/cordToTriPoints'
-import {GlobeMesh, pinTestMesh, createFabs, createFabOnClick} from './objects'
-import {dataPlaces} from '../data'
+import {GlobeMesh, pinTestMesh, createFabs, createFabOnClick, createSellOnClick} from './objects'
+import {dataPlaces, dataSell} from '../data'
 
 
 //add obj to scene //
@@ -13,7 +13,9 @@ scene.add(globe)
 //create array of objs
 //loop array / 
 
+
 let objKeys = Object.keys(dataPlaces)
+
 
 objKeys.map((x)=>{
     let places = dataPlaces[x].cord
@@ -27,6 +29,7 @@ objKeys.map((x)=>{
 
 })
 
+
 function addObjOnClick(id){
 
     let obj = dataPlaces[id].cord
@@ -39,9 +42,27 @@ function addObjOnClick(id){
     scene.add(newFab)
 }
 
-export {addObjOnClick}
 
-//get obj by name
-//var obj = scene.getObjectByName('India')
-//console.log(obj)
+function addObjOnClickSell(id){
+
+    let objKeys = Object.keys(dataSell[id])
+    console.log(objKeys)
+
+
+    objKeys.map((x)=>{
+        console.log(x)
+        let places = dataSell[id][x].cord
+    
+        let TriP = cordToTriPoints(places)
+    
+        let newPin = createSellOnClick()
+        newPin.position.set(TriP.x, TriP.y, TriP.z)
+        newPin.name = 'sellObj'
+        scene.add(newPin)
+    
+    })
+}
+
+export {addObjOnClick, addObjOnClickSell}
+
 
