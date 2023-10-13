@@ -17,7 +17,6 @@ let dataPlaces = {
         factorys: {
             "Pole Position": 'Aquinos upholstery',
             Gruhier: 'Aquinos sofa beds',
-            "H&N": 'type',
         }
     },
     'Poland': {
