@@ -7,25 +7,25 @@ let dataPlaces = {
             Novaqui: 'Mattress',
             Gofoam: 'Foam',
             Clibed: 'Fiber/Springs',
-            Eurotabua: 'Wood'
+            Eurotabua: 'Wood',
+            'Porto Offices':"Aquinos headquarters"
         }
     },
     'France': {
         cord: [46.71109, 1.7191036],
         flag: 'fr',
         factorys: {
-            Name1: 'type',
-            Name2: 'type',
-            Name3: 'type',
-            Name4: 'type',
-            Name5: 'type',
+            "Pole Position": 'Aquinos upholstery',
+            Gruhier: 'Aquinos sofa beds',
+            "H&N": 'type',
         }
     },
     'Poland': {
         cord: [51.9189046, 19.1343786],
         flag: 'pl',
         factorys: {
-            Lodz: 'Aquinos Bedding Poland',
+            Lodz: 'Aquinos Bedding',
+            Intertrend: 'Aquinos upholstery'
         }
     },
     'Germany': {
@@ -76,8 +76,9 @@ let dataPlaces = {
         cord: [35.8592948, 104.1361118],
         flag: 'cn',
         factorys: {
-            HongKong: 'Office',
-            Shenzhen : 'Office',
+            Sofibo:"Logistics",
+            HongKong: 'Offices',
+            Shenzhen : 'Offices',
         }
     },
 };
@@ -135,6 +136,47 @@ let dataSell = {
         },
         'CHINA': {
             cord: [35.86166, 104.195397]
+        }
+    },
+    'Upholstery': {
+        'Portugal': {
+            cord: [38.736946, -9.142685]
+        },
+        'France': {
+            cord: [46.603354, 1.888334]
+        },
+        'Spain': {
+            cord: [40.463667, -3.749220]
+        },
+        'Italy': {
+            cord: [41.871940, 12.567380]
+        },
+        'Germany': {
+            cord: [51.165691, 10.451526]
+        },
+        'Cyprus': {
+            cord: [35.126413, 33.429859]
+        },
+        'South Africa': {
+            cord: [-30.559482, 22.937506]
+        },
+        'Southern Africa': {
+            cord: [-24.788934, 24.732577]
+        },
+        'United Kingdom': {
+            cord: [55.378051, -3.435972]
+        },
+        'Morocco': {
+            cord: [31.791702, -7.092620]
+        },
+        'United States of America': {
+            cord: [37.090240, -95.712891]
+        },
+        'Guatemala': {
+            cord: [15.783471, -90.230759]
+        },
+        'Saudi Arabia': {
+            cord: [23.885942, 45.079162]
         }
     }
 };

@@ -289,7 +289,7 @@ weExport.addEventListener('click', ()=>{
 
     let places = `
     <div class="places">
-            <h2>Where we are</h2>
+            <h2>Where we sell</h2>
             <div class="places-list">
             </div>
           </div>
@@ -332,6 +332,10 @@ const pHandler2 = (x) => {
   const target = x.target.id
   const targetInfo = dataSell[target]
   console.log(targetInfo)
+  //remove obj if existes
+  clearSellObjects()
+  clearSelectionObjects()
+
 
   //add objs to globe
   addObjOnClickSell(target)
