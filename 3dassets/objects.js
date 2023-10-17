@@ -48,11 +48,27 @@ function createFabs(){
         color: colors.grey,
     })
 
-    
+    let newMesh = new THREE.Mesh(fabsPrime, fabsMat)
+    return newMesh
+}
+
+
+function createAllFabs(){
+
+    const colors = {
+        red:'#ba2335',
+        grey:'#a8a7a7'
+    }
+
+    const fabsPrime = new THREE.SphereGeometry(radiusExtraPins, 64, 64) // radus 0 to hide obj
+    const fabsMat = new THREE.MeshPhongMaterial ({
+        color: colors.grey,
+    })
 
     let newMesh = new THREE.Mesh(fabsPrime, fabsMat)
     return newMesh
 }
+
 
 function createFabOnClick(){
     const fabClick = new THREE.SphereGeometry(radiusExtraPins, 64, 64)
@@ -71,7 +87,7 @@ const sellGroup = new THREE.Group()
 function createSellOnClick(){
     const fabClick = new THREE.SphereGeometry(radiusExtraPins, 64, 64)
     const fabMat = new THREE.MeshStandardMaterial({
-        color: "#32a852",
+        color: "#ccb79f",
         
     })
 
@@ -82,6 +98,6 @@ function createSellOnClick(){
 }
 
 
-export{GlobeMesh, pinTestMesh, createFabs, GemSphere, createFabOnClick, createSellOnClick}
+export{GlobeMesh, pinTestMesh, createFabs, GemSphere, createFabOnClick, createSellOnClick, createAllFabs}
 
 

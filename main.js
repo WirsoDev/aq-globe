@@ -17,7 +17,7 @@ import dotstexreal from './textures/real.jpg'
 import rotate from './public/static/rotate.svg'
 import noRotate from './public/static/norotate.svg'
 import {resolvFlag} from './helpers/loadFlags'
-import {addObjOnClick, addObjOnClickSell} from './3dassets/sceneImporter'
+import {addObjOnClick, addObjOnClickSell, addObjOnClickWeAre} from './3dassets/sceneImporter'
 import {fitCameraToObject} from './helpers/fitCameraToObject'
 
 
@@ -90,6 +90,9 @@ weAre.addEventListener('click', ()=>{
   const flagsDiv = document.querySelector('.flags')
   flagsDiv.innerHTML = ''
   if(isWeareActive == false){
+    
+    addObjOnClickWeAre()
+
         //get all keys from obj
     isWeareActive = true
     const whereAre = document.getElementById('whereAre')

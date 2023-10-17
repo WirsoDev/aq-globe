@@ -137,7 +137,7 @@ let dataSell = {
             cord: [35.86166, 104.195397]
         }
     },
-    'Upholstery': {
+    'Sofas': {
         'Portugal': {
             cord: [38.736946, -9.142685]
         },
