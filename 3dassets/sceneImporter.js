@@ -1,6 +1,6 @@
 import {scene} from './scene'
 import {cordToTriPoints} from '../helpers/cordToTriPoints'
-import {GlobeMesh, pinTestMesh, createFabs, createFabOnClick, createSellOnClick, createAllFabs} from './objects'
+import {GlobeMesh, pinTestMesh, createFabs, createFabOnClick, createSellOnClick, createAllFabs, CreateAllWeAre, CreateAllSell} from './objects'
 import {dataPlaces, dataSell} from '../data'
 
 
@@ -69,8 +69,6 @@ function addObjOnClickWeAre(){
     console.log('add objs')
 
     let objKeys = Object.keys(dataPlaces)
-
-
     objKeys.map((x)=>{
         let places = dataPlaces[x].cord
 
@@ -84,6 +82,67 @@ function addObjOnClickWeAre(){
 })
 }
 
-export {addObjOnClick, addObjOnClickSell, addObjOnClickWeAre}
+
+function addAllkWeAre(){
+
+    console.log('add objs')
+
+    let objKeys = Object.keys(dataPlaces)
+    objKeys.map((x)=>{
+        let places = dataPlaces[x].cord
+
+        let TriP = cordToTriPoints(places)
+
+        let newPin = CreateAllWeAre()
+        newPin.position.set(TriP.x, TriP.y, TriP.z)
+        newPin.name = 'sellObj'
+        scene.add(newPin)
+
+})
+}
+
+function addAllSellBed(){
+
+    let objKeys = Object.keys(dataSell['Bedding'])
+    console.log(objKeys)
+
+
+    objKeys.map((x)=>{
+        console.log(x)
+        let places = dataSell['Bedding'][x].cord
+    
+        let TriP = cordToTriPoints(places)
+    
+        let newPin = CreateAllSell()
+        newPin.position.set(TriP.x, TriP.y, TriP.z)
+        newPin.name = 'sellObj'
+        scene.add(newPin)
+    
+    })
+}
+
+function addAllSellSofa(){
+
+    let objKeys = Object.keys(dataSell['Sofas'])
+    console.log(objKeys)
+
+
+    objKeys.map((x)=>{
+        console.log(x)
+        let places = dataSell['Sofas'][x].cord
+    
+        let TriP = cordToTriPoints(places)
+    
+        let newPin = CreateAllSell()
+        newPin.position.set(TriP.x, TriP.y, TriP.z)
+        newPin.name = 'sellObj'
+        scene.add(newPin)
+    
+    })
+}
+
+
+
+export {addObjOnClick, addObjOnClickSell, addObjOnClickWeAre, addAllkWeAre, addAllSellBed, addAllSellSofa}
 
 

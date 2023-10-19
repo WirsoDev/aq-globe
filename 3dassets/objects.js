@@ -60,7 +60,7 @@ function createAllFabs(){
         grey:'#a8a7a7'
     }
 
-    const fabsPrime = new THREE.SphereGeometry(radiusExtraPins, 64, 64) // radus 0 to hide obj
+    const fabsPrime = new THREE.SphereGeometry(radiusExtraPins, 64, 64) 
     const fabsMat = new THREE.MeshPhongMaterial ({
         color: colors.grey,
     })
@@ -68,6 +68,40 @@ function createAllFabs(){
     let newMesh = new THREE.Mesh(fabsPrime, fabsMat)
     return newMesh
 }
+
+
+//Create all poinst on load
+function CreateAllWeAre(){
+
+    const colors = {
+        red:'#ba2335',
+        grey:'#a8a7a7'
+    }
+
+    const fabsPrime = new THREE.SphereGeometry(radiusExtraPins, 64, 64) 
+    const fabsMat = new THREE.MeshPhongMaterial ({
+        color: colors.red,
+    })
+
+    let newMesh = new THREE.Mesh(fabsPrime, fabsMat)
+    return newMesh
+}
+
+
+function CreateAllSell(){
+    const fabClick = new THREE.SphereGeometry(radiusExtraPins, 64, 64)
+    const fabMat = new THREE.MeshStandardMaterial({
+        color: "#ba2335",
+        
+    })
+
+    let fabMesh = new THREE.Mesh(fabClick, fabMat)
+    sellGroup.add(fabMesh)
+    console.log('Create new OBJ')
+    return fabMesh
+}
+
+
 
 
 function createFabOnClick(){
@@ -98,6 +132,9 @@ function createSellOnClick(){
 }
 
 
-export{GlobeMesh, pinTestMesh, createFabs, GemSphere, createFabOnClick, createSellOnClick, createAllFabs}
+
+
+
+export{GlobeMesh, pinTestMesh, createFabs, GemSphere, createFabOnClick, createSellOnClick, createAllFabs, CreateAllWeAre, CreateAllSell}
 
 

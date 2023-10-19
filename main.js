@@ -17,11 +17,16 @@ import dotstexreal from './textures/real.jpg'
 import rotate from './public/static/rotate.svg'
 import noRotate from './public/static/norotate.svg'
 import {resolvFlag} from './helpers/loadFlags'
-import {addObjOnClick, addObjOnClickSell, addObjOnClickWeAre} from './3dassets/sceneImporter'
+import {addObjOnClick, addObjOnClickSell, addObjOnClickWeAre, addAllkWeAre, addAllSellBed, addAllSellSofa} from './3dassets/sceneImporter'
 import {fitCameraToObject} from './helpers/fitCameraToObject'
 
 
 //renderer and canvas
+
+addAllkWeAre()
+addAllSellBed()
+addAllSellSofa()
+
 
 const canvas = document.querySelector('.webgl')
 const renderer = new THREE.WebGLRenderer({canvas, antialias:true})
